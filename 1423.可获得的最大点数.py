@@ -51,9 +51,7 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 """
-class Solution:
-    def maxScore(self, cardPoints: List[int], k: int) -> int:
-        sums = [0]
+class Solution:        sums = [0]
         for i in cardPoints:
             sums.append(sums[-1] + i)
         n = len(cardPoints)
@@ -61,5 +59,7 @@ class Solution:
         for i in range(k + 1):
             res = max(res, sums[-1] - (sums[i + (n - k)] - sums[i]))
         return res
+
+    def maxScore(self, cardPoints: List[int], k: int) -> int:
 
 
